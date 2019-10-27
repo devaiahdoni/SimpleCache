@@ -45,9 +45,7 @@ public class CacheServiceMemory implements Service {
 				System.out.println(erorMessage);
 				throw new Exception(erorMessage);
 			}
-
 		}
-
 	}
 
 	public int getCapacity() {

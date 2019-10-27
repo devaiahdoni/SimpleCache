@@ -8,3 +8,6 @@ key as String, value can be anything.
 
 file name as key, and file path as value
 get method returns file content as String
+
+Referred
+[FileCache](https://www.cacheonix.org/articles/How_to_Cache_a_File_in_Java.htm)

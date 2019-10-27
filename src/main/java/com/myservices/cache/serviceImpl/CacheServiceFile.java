@@ -17,18 +17,6 @@ import com.myservices.cache.Service;
  */
 public class CacheServiceFile extends CacheServiceMemory implements Service {
 
-	// no of files to keep in cache
-//	private int capacity = 5;
-
-	/*
-	 * public int getCapacity() { return capacity; }
-	 * 
-	 * public void setCapacity(int capacity) { this.capacity = capacity; }
-	 */
-
-	// use this for concurrency support, otherwise you can use simple HashMap
-//	private ConcurrentHashMap<String, Object> cachedMap;
-
 	public CacheServiceFile() {
 		super();
 	}
@@ -40,12 +28,6 @@ public class CacheServiceFile extends CacheServiceMemory implements Service {
 	public Object get(String key) throws Exception {
 		return super.get(key);
 	}
-
-	/*
-	 * public Object get(String key) throws Exception { System.out.println(key +
-	 * " getting file content :" + cachedMap.get(key)); return
-	 * getFileConent(cachedMap.get(key)); }
-	 */
 
 	/**
 	 * gets file content into String
@@ -93,9 +75,6 @@ public class CacheServiceFile extends CacheServiceMemory implements Service {
 				System.out.println(erorMessage);
 				throw new Exception(erorMessage);
 			}
-
 		}
-
 	}
-
 }
