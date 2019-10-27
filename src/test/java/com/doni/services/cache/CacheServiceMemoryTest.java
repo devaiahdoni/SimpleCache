@@ -28,7 +28,7 @@ public class CacheServiceMemoryTest {
 	}
 
 	@Test
-	public void testPutAndGetNegative() throws Exception {
+	public void tetGetNegative() throws Exception {
 		Object testObject = cacheService.get("thiskeynotavailable");
 		assertNull(testObject);
 	}

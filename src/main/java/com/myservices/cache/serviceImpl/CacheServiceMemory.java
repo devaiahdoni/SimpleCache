@@ -40,7 +40,7 @@ public class CacheServiceMemory implements Service {
 				cachedMap.put(key, value);
 				System.out.println("Cached key: " + key);
 			} else {
-				String erorMessage = "Capacity Exceeded, max allowed :" + capacity + " ";
+				String erorMessage = "Cache Capacity Exceeded, max allowed :" + capacity + " ";
 				// throw exception
 				System.out.println(erorMessage);
 				throw new Exception(erorMessage);

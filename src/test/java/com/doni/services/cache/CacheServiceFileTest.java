@@ -32,7 +32,7 @@ public class CacheServiceFileTest {
 	}
 
 	@Test
-	public void testPutAndGetNegative() throws Exception {
+	public void testGetNegative() throws Exception {
 		Object testObject = cacheService.get("thisfilenotavailableincache");
 		assertNull(testObject);
 	}
@@ -40,7 +40,7 @@ public class CacheServiceFileTest {
 	@Test(expected = Exception.class)
 	public void testGetCapacity() throws Exception {
 		cacheService.put("FileKey1", "src/test/resources/testfile1.txt");
-		cacheService.put("FileKey2", "testfile2.txt");
+		cacheService.put("FileKey2", "src/test/resources/testfile2.txt");
 		cacheService.put("FileKey3", "src/test/resources/testfile3.txt");// this will throw capacity exception
 	}
 

@@ -10,7 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import com.myservices.cache.Service;
 
 /**
- * Loads file name and file content in cache ,
+ * Loads file name and file content in cache
  * 
  * @author Devaiah Doni
  *
@@ -65,12 +65,12 @@ public class CacheServiceFile extends CacheServiceMemory implements Service {
 					// instead of file content we can added FileCacheVO Object with timestamp etc to
 					// check timestamp, if file modified after cached
 					cachedMap.put(key, fileContent);
+					System.out.println("Cached key: " + key + " with file content: " + value);
 				} else {
 					throw new FileNotFoundException(value + " File not found");
 				}
-				System.out.println("Cached key: " + key + " with file content: " + value);
 			} else {
-				String erorMessage = "File Capacity Exceeded, max allowed :" + capacity + " ";
+				String erorMessage = "File Cache Capacity Exceeded, max allowed :" + capacity + " ";
 				// throw exception
 				System.out.println(erorMessage);
 				throw new Exception(erorMessage);
