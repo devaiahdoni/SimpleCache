@@ -1,9 +1,11 @@
 package com.doni.services.cache;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.myservices.cache.Service;
@@ -24,13 +26,15 @@ public class CacheServiceFileTest {
 
 		cacheService.put("TestFile1Key1", "src/test/resources/testfile1.txt");
 		Object testObject = cacheService.get("TestFile1Key1");
-		Assert.assertNotNull(testObject);
+		assertNotNull(testObject);
+		assertEquals(testObject+" Not matched", "sample test1", testObject);
+
 	}
 
 	@Test
 	public void testPutAndGetNegative() throws Exception {
 		Object testObject = cacheService.get("thisfilenotavailableincache");
-		Assert.assertNull(testObject);
+		assertNull(testObject);
 	}
 
 	@Test(expected = Exception.class)
@@ -42,6 +46,6 @@ public class CacheServiceFileTest {
 
 	@After
 	public void clenup() {
-		// @TODO: clear cache
+		// @TODO: clear cache and destroy cache
 	}
 }

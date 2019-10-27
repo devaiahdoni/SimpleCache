@@ -1,7 +1,9 @@
 package com.doni.services.cache;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,13 +24,13 @@ public class CacheServiceMemoryTest {
 	public void testPutAndGet() throws Exception {
 		cacheService.put("Test1Key1", "TestObject");
 		Object testObject = cacheService.get("Test1Key1");
-		Assert.assertNotNull(testObject);
+		assertNotNull(testObject);
 	}
 
 	@Test
 	public void testPutAndGetNegative() throws Exception {
 		Object testObject = cacheService.get("thiskeynotavailable");
-		Assert.assertNull(testObject);
+		assertNull(testObject);
 	}
 
 	@Test(expected = Exception.class)

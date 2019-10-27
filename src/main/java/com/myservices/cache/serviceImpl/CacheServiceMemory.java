@@ -14,11 +14,11 @@ import com.myservices.cache.Service;
 public class CacheServiceMemory implements Service {
 
 	// use this for concurrency support, otherwise you can use simple HashMap
-	private ConcurrentHashMap<String, Object> cachedMap;
+	protected ConcurrentHashMap<String, Object> cachedMap;
 
 	// this is numner of entries in cache, but this can be extended to
 	// memory also
-	private int capacity = 10; // default , check factory for overriding this
+	protected int capacity = 10; // default , check factory for overriding this
 
 	public CacheServiceMemory() {
 		cachedMap = new ConcurrentHashMap<String, Object>();
@@ -28,7 +28,7 @@ public class CacheServiceMemory implements Service {
 		this.cachedMap = cachedMap;
 	}
 
-	public Object get(String key) {
+	public Object get(String key) throws Exception {
 		return cachedMap.get(key);
 	}
 
