@@ -79,7 +79,7 @@ public class CacheServiceFile implements Service {
 			// this loads file from absolute/relative path
 			File file = new File(value.toString());
 			if (file.exists()) {
-				// read file content into String
+				// this can be implemented differently instead of file path , date time stamp can be added
 				File destCacheFile = new File(cacheLocation + "\\" + value);
 				destCacheFile.getParentFile().mkdirs();
 				FileUtils.copyFile(file, destCacheFile);
