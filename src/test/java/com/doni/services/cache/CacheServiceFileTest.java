@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+import java.io.File;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,7 +29,7 @@ public class CacheServiceFileTest {
 		cacheService.put("TestFile1Key1", "src/test/resources/testfile1.txt");
 		Object testObject = cacheService.get("TestFile1Key1");
 		assertNotNull(testObject);
-		assertEquals(testObject+" Not matched", "sample test1", testObject);
+		assertEquals(testObject+" Not matched", "cache\\src\\test\\resources\\testfile1.txt", ((File)testObject).getPath());
 
 	}
 

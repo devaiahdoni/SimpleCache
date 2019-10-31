@@ -23,6 +23,8 @@ public class CacheFactory {
 		case FILE:
 			CacheServiceFile cacheService1 = new CacheServiceFile();
 			cacheService1.setCapacity(2);
+			//set cache location  getting from properties file
+			cacheService1.setCacheLocation("cache");
 			return cacheService1;
 		case DB:
 			System.out.println("DB Cache NOT IMPLEMENTED");
